@@ -7302,3 +7302,20 @@ Migrating to CreateUsers (20241110191734)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "Gaurav"], ["email", "gaurav@example.com"], ["created_at", "2024-11-10 19:31:20.703562"], ["updated_at", "2024-11-10 19:31:20.703562"]]
   [1m[36mTRANSACTION (33.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "aa"], ["email", "aa@example.com"], ["created_at", "2024-11-10 19:41:49.171372"], ["updated_at", "2024-11-10 19:41:49.171372"]]
+  [1m[36mTRANSACTION (37.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "bb"], ["email", "bb@exmpale.com"], ["created_at", "2024-11-10 19:46:52.487656"], ["updated_at", "2024-11-10 19:46:52.487656"]]
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["username", "cc"], ["email", "cc@exmpale.com"], ["created_at", "2024-11-10 19:49:10.229415"], ["updated_at", "2024-11-10 19:49:10.229415"]]
+  [1m[36mTRANSACTION (32.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "gaurav"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "gaurav@com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "gaurav"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "gaurav@com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
