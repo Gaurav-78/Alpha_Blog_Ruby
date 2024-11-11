@@ -8,10 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css", integrity: "sha384-KyZXEAg3QhqLMpG8r+Knujsl5/4MR1dg4cbDxGI6zRlEjtDz2m3/1P1jwpBfZ8ES", crossorigin: "anonymous" %>
+
   </head>
 
   <body>
-        <%= render 'layouts/messages'%>
+
+ <% flash.each do |name, msg| %> 
+      <%= msg %> 
+    <% end %>
+
+
     <%= yield %>
+
+
   </body>
 </html>
